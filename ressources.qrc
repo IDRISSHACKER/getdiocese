@@ -277,26 +277,29 @@
     <file>static/asset/icons/blue/wifi.svg</file>
     <file>static/asset/icons/blue/wifi-off.svg</file>
     <file>static/asset/icons/blue/wind.svg</file>
-    <file>static/asset/icons/blue/x.svg</file>
-    <file>static/asset/icons/blue/x-circle.svg</file>
-    <file>static/asset/icons/blue/x-octagon.svg</file>
-    <file>static/asset/icons/blue/x-square.svg</file>
-    <file>static/asset/icons/blue/youtube.svg</file>
-    <file>static/asset/icons/blue/zap.svg</file>
-    <file>static/asset/icons/blue/zap-off.svg</file>
-    <file>static/asset/icons/blue/zoom-in.svg</file>
-    <file>static/asset/icons/blue/zoom-out.svg</file>
+      <file>static/asset/icons/blue/x.svg</file>
+      <file>static/asset/icons/blue/x-circle.svg</file>
+      <file>static/asset/icons/blue/x-octagon.svg</file>
+      <file>static/asset/icons/blue/x-square.svg</file>
+      <file>static/asset/icons/blue/youtube.svg</file>
+      <file>static/asset/icons/blue/zap.svg</file>
+      <file>static/asset/icons/blue/zap-off.svg</file>
+      <file>static/asset/icons/blue/zoom-in.svg</file>
+      <file>static/asset/icons/blue/zoom-out.svg</file>
   </qresource>
-  <qresource prefix="avatar">
-    <file>static/asset/avatar/231167000_252829490005291_5323121114516992890_n.jpg</file>
-  </qresource>
-  <qresource prefix="whiteIcons">
-    <file>static/asset/icons/white/activity.svg</file>
-    <file>static/asset/icons/white/airplay.svg</file>
-    <file>static/asset/icons/white/alert-circle.svg</file>
-    <file>static/asset/icons/white/alert-octagon.svg</file>
-    <file>static/asset/icons/white/alert-triangle.svg</file>
-    <file>static/asset/icons/white/align-center.svg</file>
+    <qresource prefix="av">
+        <file>static/asset/avatar/231167000_252829490005291_5323121114516992890_n.jpg</file>
+    </qresource>
+    <qresource prefix="avatar">
+        <file>static/asset/avatar/231167000_252829490005291_5323121114516992890_n.jpg</file>
+    </qresource>
+    <qresource prefix="whiteIcons">
+        <file>static/asset/icons/white/activity.svg</file>
+        <file>static/asset/icons/white/airplay.svg</file>
+        <file>static/asset/icons/white/alert-circle.svg</file>
+        <file>static/asset/icons/white/alert-octagon.svg</file>
+        <file>static/asset/icons/white/alert-triangle.svg</file>
+        <file>static/asset/icons/white/align-center.svg</file>
     <file>static/asset/icons/white/align-justify.svg</file>
     <file>static/asset/icons/white/align-left.svg</file>
     <file>static/asset/icons/white/align-right.svg</file>
