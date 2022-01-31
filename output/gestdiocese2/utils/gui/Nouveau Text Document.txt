@@ -1,0 +1,12 @@
+class style:
+	@staticmethod
+	def btnErrTable(btn):
+		return btn.setStyleSheet("""padding: 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            border: none;
+            color: #ab0a0a;
+            background-color: rgb(249, 122, 122, 0.1);
+            width: 200px;
+            height: auto;
+            text-align: center;""")

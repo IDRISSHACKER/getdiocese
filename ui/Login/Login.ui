@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>493</height>
+    <width>941</width>
+    <height>504</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,6 +35,40 @@
       <item>
        <widget class="QWidget" name="widget_2" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item alignment="Qt::AlignTop">
+          <widget class="QWidget" name="widget_8" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item alignment="Qt::AlignTop">
+             <widget class="QLabel" name="label_23">
+              <property name="font">
+               <font>
+                <family>GeForce</family>
+                <pointsize>22</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(17, 71, 146);</string>
+              </property>
+              <property name="text">
+               <string>EGLISEAPP</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_7">
            <property name="maximumSize">
@@ -47,7 +81,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>../../static/asset/svg/undraw_data_trends_re_2cdy.svg</pixmap>
+            <pixmap>../../static/asset/other/hero-illo_1x.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -179,7 +213,7 @@ border-solid: 15px
                <item>
                 <widget class="QFrame" name="frame">
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(10, 114, 189);
+                  <string notr="true">background-color: #0c386b;
 border-radius: none</string>
                  </property>
                  <property name="frameShape">
@@ -290,7 +324,7 @@ margin: 2px</string>
                   <item>
                    <widget class="QFrame" name="frame_2">
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(10, 114, 189);</string>
+                     <string notr="true">background-color:#0c386b;</string>
                     </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
@@ -354,6 +388,55 @@ margin: 2px</string>
               </layout>
              </widget>
             </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox">
+              <property name="font">
+               <font>
+                <family>GeForce</family>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="title">
+               <string>Selectionner le type de structure</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <property name="topMargin">
+                <number>13</number>
+               </property>
+               <item>
+                <widget class="QComboBox" name="comboBox">
+                 <property name="font">
+                  <font>
+                   <family>GeForce</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding: 15px;</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>item1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>item 2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>item 3</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
@@ -390,20 +473,21 @@ margin: 2px</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton#connect{
-	background: &quot;#1770ca&quot;;
+	background: rgba(17,71,146,255)
+;
 	color: white;
 	padding: 15px;
 	border-radius: 4px;
 }
 
 QPushButton#connect:hover{
-	background: #0c4f97;
+	background: #0c386b;
 	transform: translateY(2px);
 	transition: all linear 0.3s
 }
 
 QPushButton#connect:pressed{
-	background: #044081;
+	background: #0c386b;
 	transform: translateY(4px);
 	padding-top:10px;
 	padding-left:10px;
