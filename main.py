@@ -17,6 +17,9 @@ from App.Budget.Budget import Budget
 from App.Categorie.Categorie import Categorie
 from App.Compte.Compte import Compte
 from App.Element.Element import Element
+from App.Casuel.Casuel import Casuel
+from App.Messe.Messe import Messe
+from App.Participation.Participation import Partcipation
 from App.Taux.Taux import Taux
 from PyQt5.QtCore import QObject, QThread, pyqtSignal
 from App.Api.models.bdd.Connexion import bdd
@@ -49,7 +52,11 @@ class Main(QtWidgets.QMainWindow):
         self.categorie = Categorie(self.home)
         self.compte = Compte(self.home)
         self.element = Element(self.home)
+        self.casuel = Casuel(self.home)
+        self.messe = Messe(self.home)
+        self.participation = Partcipation(self.home)
         # self.taux = Taux(self.main)
+
         self.login.setup_connexion()
         self.conf.setup_connexion()
         self.struct.settup_connexion()
@@ -60,6 +67,9 @@ class Main(QtWidgets.QMainWindow):
         self.categorie.settup_connexion()
         self.element.settup_connexion()
         # self.taux.settup_connexion()
+        self.casuel.settup_connexion()
+        self.messe.settup_connexion()
+        self.participation.settup_connexion()
 
     def endWorker(self):
         self.setup_connexion()

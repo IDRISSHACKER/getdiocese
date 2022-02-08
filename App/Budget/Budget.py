@@ -81,9 +81,10 @@ class Budget:
             editBtn.setIcon(PyQt5.QtGui.QIcon("static/asset/icons/blue/edit.svg"))
             deleteBtn.setIcon(PyQt5.QtGui.QIcon("static/asset/icons/blue/delete.svg"))
 
-            self.home.budgetTable.setCellWidget(index, 0, PyQt5.QtWidgets.QLabel(data[1]))
-            self.home.budgetTable.setCellWidget(index, 1, editBtn)
-            self.home.budgetTable.setCellWidget(index, 2, deleteBtn)
+            self.home.budgetTable.setCellWidget(index, 0, PyQt5.QtWidgets.QLabel(f"{data[3]} FCFA"))
+            self.home.budgetTable.setCellWidget(index, 1, PyQt5.QtWidgets.QLabel(data[2]))
+            self.home.budgetTable.setCellWidget(index, 2, editBtn)
+            self.home.budgetTable.setCellWidget(index, 3, deleteBtn)
             index += 1
 
     def onSelectedChanged(self, selected, deselected):
@@ -114,7 +115,6 @@ class Budget:
             if self.budgetState == 1:
                 if self.api.setBudget(secret, structure, year, montant):
                     self.addBudget.close()
-                    self.addBudget.structure.setText("")
                     self.addBudget.montant.setText("")
                     msg.show(f"le nouveau budget à été ajoutée avèc success")
                 else:

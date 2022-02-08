@@ -222,6 +222,7 @@
               <widget class="QPushButton" name="structureBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -256,6 +257,7 @@
               <widget class="QPushButton" name="serviceBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -290,6 +292,7 @@
               <widget class="QPushButton" name="zoneBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -324,6 +327,7 @@
               <widget class="QPushButton" name="budgetBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -358,6 +362,7 @@
               <widget class="QPushButton" name="categorieBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -392,6 +397,7 @@
               <widget class="QPushButton" name="elementBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -426,6 +432,7 @@
               <widget class="QPushButton" name="casuelBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -460,6 +467,7 @@
               <widget class="QPushButton" name="messeBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -494,6 +502,7 @@
               <widget class="QPushButton" name="participationBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -528,6 +537,7 @@
               <widget class="QPushButton" name="compteBtn">
                <property name="font">
                 <font>
+                 <family>GeForce</family>
                  <pointsize>10</pointsize>
                  <weight>75</weight>
                  <italic>false</italic>
@@ -823,7 +833,7 @@
        <item>
         <widget class="QStackedWidget" name="pages">
          <property name="currentIndex">
-          <number>2</number>
+          <number>11</number>
          </property>
          <widget class="QWidget" name="dashboard">
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -2209,7 +2219,7 @@ border-radius: 10px;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="addElement_2">
+                  <widget class="QPushButton" name="newCasuel">
                    <property name="font">
                     <font>
                      <family>GeForce</family>
@@ -2222,14 +2232,14 @@ border-radius: 10px;</string>
                     <cursorShape>PointingHandCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">#addElement_2{
+                    <string notr="true">#newCasuel{
 	background: rgb(10, 114, 189, 0.02);
 	color: rgb(10, 114, 189);
 	border-radius:4px;
 	padding: 15px
 }
 
-#addElement_2:hover{
+#newCasuel:hover{
 	background: rgb(10, 114, 189, 0.3);
 	color: rgb(10, 114, 189);
 	border-radius:4px
