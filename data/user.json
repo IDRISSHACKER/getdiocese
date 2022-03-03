@@ -1,0 +1,11 @@
+{
+  "name": "IDRISS",
+  "phone": "6579884543",
+  "role": 1,
+  "password": "4DSWX",
+  "structure": 1,
+  "access": [1, 5, 7, 8],
+  "lastLogin": "11/02/2022",
+  "online": false
+}
+

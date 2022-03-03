@@ -12,7 +12,10 @@ class BudgetApi:
 
     def getBudgets(self):
         try:
-            return self.db.query("SELECT * FROM [GestDiocese].[dbo].[BUDGET_PRE2]")
+            return self.db.query("""SELECT id_b, nom_st, annee_b, montant_b FROM [GestDiocese].[dbo].[BUDGET_PRE2]
+            INNER JOIN [GestDiocese].[dbo].[STRUCTURES]
+            ON [GestDiocese].[dbo].[BUDGET_PRE2].[code_st] = [GestDiocese].[dbo].[STRUCTURES].[code_st]
+            """)
         except Exception:
             print("erreur l'ors de la recuperation des budgets")
             return []

@@ -55,7 +55,7 @@
 	background: #fff;
 }
 
-#dashboardBtn, #structureBtn, #serviceBtn, #versementBtn, #compteBtn, #zoneBtn, #budgetBtn, #categorieBtn, #settingsBtn, #elementBtn, #casuelBtn, #versementCasuelBtn, #messeBtn, #versementMesseBtn, #participationBtn{
+#dashboardBtn, #structureBtn, #serviceBtn, #versementBtn, #compteBtn, #zoneBtn, #budgetBtn, #categorieBtn, #settingsBtn, #elementBtn, #casuelBtn, #versementCasuelBtn, #messeBtn, #versementMesseBtn, #participationBtn,#categorieStruct, #tauxBtn{
 	color: #fff;
 	padding: 10px 5px;
 	text-align: left;
@@ -63,9 +63,8 @@
 	width: 200px
 }
 
-#dashboardBtn:hover, #structureBtn:hover, #serviceBtn:hover, #versementBtn:hover, #compteBtn:hover, #zoneBtn:hover, #budgetBtn:hover, #categorieBtn:hover,#settingsBtn:hover, #elementBtn:hover, #casuelBtn:hover, #versementCasuelBtn:hover, #messeBtn:hover, #versementMesseBtn:hover, #participationBtn:hover{
+#dashboardBtn:hover, #structureBtn:hover, #serviceBtn:hover, #versementBtn:hover, #compteBtn:hover, #zoneBtn:hover, #budgetBtn:hover, #categorieBtn:hover,#settingsBtn:hover, #elementBtn:hover, #casuelBtn:hover, #versementCasuelBtn:hover, #messeBtn:hover, #versementMesseBtn:hover, #participationBtn:hover,  #categorieStruct:hover,  #tauxBtn:hover{
 	background: rgba(255, 255, 255, 0.3);
-	transition: all linear 0.3s;
 }
 
 #profileCont{
@@ -359,6 +358,41 @@
               </widget>
              </item>
              <item>
+              <widget class="QPushButton" name="categorieStruct">
+               <property name="font">
+                <font>
+                 <family>GeForce</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                 <strikeout>false</strikeout>
+                 <kerning>true</kerning>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>Categorie de structure</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../static/asset/icons/white/folder.svg</normaloff>../static/asset/icons/white/folder.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="categorieBtn">
                <property name="font">
                 <font>
@@ -379,7 +413,7 @@
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="text">
-                <string>Categorie</string>
+                <string>Categorie d'element</string>
                </property>
                <property name="icon">
                 <iconset>
@@ -534,6 +568,41 @@
               </widget>
              </item>
              <item>
+              <widget class="QPushButton" name="tauxBtn">
+               <property name="font">
+                <font>
+                 <family>GeForce</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                 <strikeout>false</strikeout>
+                 <kerning>true</kerning>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>Taux</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../static/asset/icons/white/slack.svg</normaloff>../static/asset/icons/white/slack.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="compteBtn">
                <property name="font">
                 <font>
@@ -554,11 +623,11 @@
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="text">
-                <string>Utilisateurs</string>
+                <string>Comptes</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../static/asset/icons/white/users.svg</normaloff>../static/asset/icons/white/users.svg</iconset>
+                 <normaloff>../static/asset/icons/white/framer.svg</normaloff>../static/asset/icons/white/framer.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -833,7 +902,7 @@
        <item>
         <widget class="QStackedWidget" name="pages">
          <property name="currentIndex">
-          <number>11</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="dashboard">
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1201,33 +1270,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_28">
                  <item>
-                  <widget class="QTableWidget" name="serviceTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Service</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="serviceTable"/>
                  </item>
                 </layout>
                </widget>
@@ -1333,31 +1376,6 @@ border-radius: 10px;</string>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
-                <row>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </row>
-                <row>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </row>
-                <column>
-                 <property name="text">
-                  <string>New Column</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>New Column</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>New Column</string>
-                 </property>
-                </column>
                </widget>
               </item>
              </layout>
@@ -1463,26 +1481,6 @@ border-radius: 10px;</string>
                      <string/>
                     </property>
                    </row>
-                   <column>
-                    <property name="text">
-                     <string>Montant</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Date</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer le versement</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Supprimer le versement </string>
-                    </property>
-                   </column>
                   </widget>
                  </item>
                 </layout>
@@ -1584,18 +1582,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_30">
                  <item>
-                  <widget class="QTableWidget" name="zoneTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                  </widget>
+                  <widget class="QTableWidget" name="zoneTable"/>
                  </item>
                 </layout>
                </widget>
@@ -1696,38 +1683,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_31">
                  <item>
-                  <widget class="QTableWidget" name="budgetTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Montant du budget</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Année du budget</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="budgetTable"/>
                  </item>
                 </layout>
                </widget>
@@ -1828,33 +1784,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_32">
                  <item>
-                  <widget class="QTableWidget" name="ctgTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Titre de la categorie</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="ctgTable"/>
                  </item>
                 </layout>
                </widget>
@@ -1914,7 +1844,7 @@ border-radius: 10px;</string>
 </string>
                    </property>
                    <property name="text">
-                    <string>Nouvelle categorie</string>
+                    <string>Nouvelle categorie d'element</string>
                    </property>
                    <property name="icon">
                     <iconset>
@@ -1955,28 +1885,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_33">
                  <item>
-                  <widget class="QTableWidget" name="compteTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Nom de la structure</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Solde du compte</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="compteTable"/>
                  </item>
                 </layout>
                </widget>
@@ -2007,6 +1916,49 @@ border-radius: 10px;</string>
                    </property>
                   </widget>
                  </item>
+                 <item>
+                  <widget class="QPushButton" name="addCompte">
+                   <property name="font">
+                    <font>
+                     <family>GeForce</family>
+                     <pointsize>12</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#addCompte{
+	background: rgb(10, 114, 189, 0.02);
+	color: rgb(10, 114, 189);
+	border-radius:4px;
+	padding: 15px
+}
+
+#addCompte:hover{
+	background: rgb(10, 114, 189, 0.3);
+	color: rgb(10, 114, 189);
+	border-radius:4px
+}
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Nouveau compte</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>../static/asset/icons/blue/copy.svg</normaloff>../static/asset/icons/blue/copy.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -2034,33 +1986,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_34">
                  <item>
-                  <widget class="QTableWidget" name="elementTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Elem</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="elementTable"/>
                  </item>
                 </layout>
                </widget>
@@ -2161,33 +2087,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_35">
                  <item>
-                  <widget class="QTableWidget" name="casuelTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Elem</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="casuelTable"/>
                  </item>
                 </layout>
                </widget>
@@ -2269,7 +2169,7 @@ border-radius: 10px;</string>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="versementCasuel">
+         <widget class="QWidget" name="categorieStructure">
           <layout class="QVBoxLayout" name="verticalLayout_36">
            <item>
             <widget class="QFrame" name="zonebb_7">
@@ -2288,33 +2188,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_36">
                  <item>
-                  <widget class="QTableWidget" name="versementCasuelTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Elem</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="tableCtgStruct"/>
                  </item>
                 </layout>
                </widget>
@@ -2346,7 +2220,7 @@ border-radius: 10px;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="addVersementCasuel">
+                  <widget class="QPushButton" name="addCtgStruct">
                    <property name="font">
                     <font>
                      <family>GeForce</family>
@@ -2359,14 +2233,14 @@ border-radius: 10px;</string>
                     <cursorShape>PointingHandCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">#addVersementCasuel{
+                    <string notr="true">#addCtgStruct{
 	background: rgb(10, 114, 189, 0.02);
 	color: rgb(10, 114, 189);
 	border-radius:4px;
 	padding: 15px
 }
 
-#addVersementCasuel:hover{
+#addCtgStruct:hover{
 	background: rgb(10, 114, 189, 0.3);
 	color: rgb(10, 114, 189);
 	border-radius:4px
@@ -2374,7 +2248,7 @@ border-radius: 10px;</string>
 </string>
                    </property>
                    <property name="text">
-                    <string>Nouveau versement de casuel</string>
+                    <string>Nouvelle categorie de structure</string>
                    </property>
                    <property name="icon">
                     <iconset>
@@ -2415,33 +2289,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_37">
                  <item>
-                  <widget class="QTableWidget" name="messeTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Elem</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="messeTable"/>
                  </item>
                 </layout>
                </widget>
@@ -2542,33 +2390,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_38">
                  <item>
-                  <widget class="QTableWidget" name="versementMesseTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Elem</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="versementMesseTable"/>
                  </item>
                 </layout>
                </widget>
@@ -2669,33 +2491,7 @@ border-radius: 10px;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_39">
                  <item>
-                  <widget class="QTableWidget" name="participationTable">
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>Elem</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Editer</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Suprimer</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="participationTable"/>
                  </item>
                 </layout>
                </widget>
@@ -2756,6 +2552,107 @@ border-radius: 10px;</string>
                    </property>
                    <property name="text">
                     <string>Nouvelle participation</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>../static/asset/icons/blue/copy.svg</normaloff>../static/asset/icons/blue/copy.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="taux">
+          <layout class="QVBoxLayout" name="verticalLayout_38">
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_41">
+              <item>
+               <widget class="QWidget" name="tableData_14" native="true">
+                <property name="styleSheet">
+                 <string notr="true">background:white;
+border-radius: 10px;</string>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_42">
+                 <item>
+                  <widget class="QTableWidget" name="tauxTable"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="actions_service_8" native="true">
+                <property name="styleSheet">
+                 <string notr="true">background:white;
+border-radius: 10px;</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_37">
+                 <item>
+                  <widget class="QLabel" name="serviceLabel_13">
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>230</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap>../static/asset/other/bg15-1.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="addTaux">
+                   <property name="font">
+                    <font>
+                     <family>GeForce</family>
+                     <pointsize>12</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#addTaux{
+	background: rgb(10, 114, 189, 0.02);
+	color: rgb(10, 114, 189);
+	border-radius:4px;
+	padding: 15px
+}
+
+#addTaux:hover{
+	background: rgb(10, 114, 189, 0.3);
+	color: rgb(10, 114, 189);
+	border-radius:4px
+}
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Ajouter un taux</string>
                    </property>
                    <property name="icon">
                     <iconset>

@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 from PyQt5.uic import loadUi
-
+from utils.gui.dbJson import dbJson
 
 class LayoutConfig:
-    def __init__(self, home, main=""):
+    def __init__(self, home, versementPage, main="", loginPage=""):
         super(LayoutConfig, self).__init__()
         self.home = home
-        self.versementPage = loadUi("ui/Versements.ui")
+        self.versementPage = versementPage
+        self.loginPage = loginPage
         self.main = main
+        self.json = dbJson("users.json")
         self.home.setWindowTitle("Parametres")
         self.main.setWindowTitle("Gestion Eglise")
         self.active = 1
@@ -26,11 +28,15 @@ class LayoutConfig:
         self.home.casuelBtn.clicked.connect(self.goToCasuel)
         self.home.messeBtn.clicked.connect(self.goToMesse)
         self.home.participationBtn.clicked.connect(self.goToParticipation)
-
+        self.home.categorieStruct.clicked.connect(self.goToCategorieStruct)
+        self.home.tauxBtn.clicked.connect(self.goToTaux)
         self.main.btnCog.clicked.connect(self.showMain)
         self.main.btnVersement.clicked.connect(self.showVersement)
+        self.main.btnAdd.clicked.connect(self.showVersement)
         self.versementPage.versementCasuelBtn.clicked.connect(self.goToVersementCasuel)
         self.versementPage.versementMesseBtn.clicked.connect(self.goToVersementMesse)
+        self.main.deconnect.clicked.connect(self.logOut)
+        
 
     def showMain(self):
         # self.home.setModal(True)
@@ -67,7 +73,11 @@ class LayoutConfig:
 
     def goToCategorie(self):
         self.home.pages.setCurrentWidget(self.home.categorie)
-        self.setActive(self.home.categorieBtn, "Categorie")
+        self.setActive(self.home.categorieBtn, "Categorie d'element")
+
+    def goToCategorieStruct(self):
+        self.home.pages.setCurrentWidget(self.home.categorieStructure)
+        self.setActive(self.home.categorieStruct, "Categorie de structure")
 
     def goToCompte(self):
         self.home.pages.setCurrentWidget(self.home.compte)
@@ -100,6 +110,15 @@ class LayoutConfig:
     def goToElement(self):
         self.home.pages.setCurrentWidget(self.home.element)
         self.setActive(self.home.elementBtn, "Elements")
+    
+    def goToTaux(self):
+        self.home.pages.setCurrentWidget(self.home.taux)
+        self.setActive(self.home.tauxBtn, "Taux")
+    
+    def logOut(self):
+        print("logOut")
+        self.main.close()
+        self.loginPage.login.show()
 
     def removeActive(self):
         # self.home.dashboardBtn.setStyleSheet("")
@@ -109,12 +128,14 @@ class LayoutConfig:
         self.home.zoneBtn.setStyleSheet("")
         self.home.budgetBtn.setStyleSheet("")
         self.home.categorieBtn.setStyleSheet("")
+        self.home.categorieStruct.setStyleSheet("")
         self.home.compteBtn.setStyleSheet("")
         self.home.elementBtn.setStyleSheet("")
         self.home.casuelBtn.setStyleSheet("")
         self.home.menuBtn.setStyleSheet("")
         self.home.messeBtn.setStyleSheet("")
         self.home.participationBtn.setStyleSheet("")
+        self.home.tauxBtn.setStyleSheet("")
 
         self.versementPage.versementBtn.setStyleSheet("")
         self.versementPage.versementCasuelBtn.setStyleSheet("")
@@ -132,3 +153,5 @@ class LayoutConfig:
             self.home.leftMenu.setVisible(False)
         else:
             self.home.leftMenu.setVisible(True)
+    
+

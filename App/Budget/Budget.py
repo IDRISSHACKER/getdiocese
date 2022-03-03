@@ -35,9 +35,9 @@ class Budget:
         self.addBudget.setWindowTitle("Nouveau budget")
 
     def initializeTable(self):
-        self.home.budgetTable.setColumnCount(4)
-        self.home.budgetTable.setHorizontalHeaderLabels(("Montant du budget", "Année du budget", "Edition", "Supression"))
-        self.home.budgetTable.setColumnWidth(0, 200)
+        self.home.budgetTable.setColumnCount(6)
+        self.home.budgetTable.setHorizontalHeaderLabels(("id", "Structure", "Montant du budget", "Année du budget", "Edition", "Supression"))
+        self.home.budgetTable.setColumnWidth(0, 0)
         self.home.budgetTable.setColumnWidth(1, 200)
         self.home.budgetTable.setColumnWidth(2, 200)
         self.home.budgetTable.setColumnWidth(3, 200)
@@ -81,10 +81,12 @@ class Budget:
             editBtn.setIcon(PyQt5.QtGui.QIcon("static/asset/icons/blue/edit.svg"))
             deleteBtn.setIcon(PyQt5.QtGui.QIcon("static/asset/icons/blue/delete.svg"))
 
-            self.home.budgetTable.setCellWidget(index, 0, PyQt5.QtWidgets.QLabel(f"{data[3]} FCFA"))
-            self.home.budgetTable.setCellWidget(index, 1, PyQt5.QtWidgets.QLabel(data[2]))
-            self.home.budgetTable.setCellWidget(index, 2, editBtn)
-            self.home.budgetTable.setCellWidget(index, 3, deleteBtn)
+            self.home.budgetTable.setCellWidget(index, 0, PyQt5.QtWidgets.QLabel(f"{data[0]}"))
+            self.home.budgetTable.setCellWidget(index, 1, PyQt5.QtWidgets.QLabel(f"{data[1]}"))
+            self.home.budgetTable.setCellWidget(index, 2, PyQt5.QtWidgets.QLabel(f"{data[3]} FCFA"))
+            self.home.budgetTable.setCellWidget(index, 3, PyQt5.QtWidgets.QLabel(data[2]))
+            self.home.budgetTable.setCellWidget(index, 4, editBtn)
+            self.home.budgetTable.setCellWidget(index, 5, deleteBtn)
             index += 1
 
     def onSelectedChanged(self, selected, deselected):
@@ -106,16 +108,16 @@ class Budget:
     def saveBudget(self):
         secret = random.randint(45, 890)
         structure = self.addBudget.structure.currentData()
-        montant = self.addBudget.montant.text()
+        montant = self.addBudget.montant.value()
         year = time.localtime().tm_year
 
         print(year)
 
-        if len(structure and montant) > 0:
+        if len(structure and str(montant)) > 0:
             if self.budgetState == 1:
                 if self.api.setBudget(secret, structure, year, montant):
                     self.addBudget.close()
-                    self.addBudget.montant.setText("")
+                    self.addBudget.montant.setValue(0)
                     msg.show(f"le nouveau budget à été ajoutée avèc success")
                 else:
                     print(f"erreur l'ors de l'ajout de {secret} à la base de donnée")

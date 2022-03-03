@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>664</width>
-    <height>477</height>
+    <width>575</width>
+    <height>390</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,7 +64,7 @@
                </font>
               </property>
               <property name="title">
-               <string>Selectionner une structure</string>
+               <string>Selectionner une participation</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_12">
                <property name="spacing">
@@ -137,7 +137,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="structure">
+                   <widget class="QComboBox" name="participation">
                     <property name="font">
                      <font>
                       <family>GeForce</family>
@@ -172,7 +172,7 @@ border-radius:10px</string>
                <string notr="true"/>
               </property>
               <property name="title">
-               <string>Selectionner un element</string>
+               <string>Selectionner un casuel</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
                <property name="spacing">
@@ -245,7 +245,7 @@ border-radius:10px</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="element">
+                   <widget class="QComboBox" name="casuel">
                     <property name="font">
                      <font>
                       <family>GeForce</family>
@@ -280,7 +280,7 @@ border-radius:10px</string>
                <string notr="true"/>
               </property>
               <property name="title">
-               <string>Quantitée</string>
+               <string>Entrez sa valeur</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
                <property name="spacing">
@@ -353,7 +353,7 @@ border-radius:10px</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QSpinBox" name="qtt">
+                   <widget class="QSpinBox" name="valeur">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -368,102 +368,8 @@ border-radius:10px</string>
                     <property name="styleSheet">
                      <string notr="true">border: none</string>
                     </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_5">
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_7">
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QFrame" name="input_2">
-                 <property name="styleSheet">
-                  <string notr="true">#input_2{
-	background:white;
-	border-radius:10px;
-	border:2px  solid rgb(10, 114, 189);
-}
-
-#lineEdit_2{
-	border: none;
-}</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <property name="leftMargin">
-                   <number>10</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="label_5">
-                    <property name="maximumSize">
-                     <size>
-                      <width>30</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="pixmap">
-                     <pixmap>../../static/asset/icons/blue/credit-card.svg</pixmap>
-                    </property>
-                    <property name="scaledContents">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLineEdit" name="montant">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>GeForce</family>
-                      <pointsize>12</pointsize>
-                      <weight>75</weight>
-                      <bold>true</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">padding:15px;
-border-radius:10px</string>
-                    </property>
-                    <property name="placeholderText">
-                     <string>Montant</string>
+                    <property name="maximum">
+                     <number>999999999</number>
                     </property>
                    </widget>
                   </item>
@@ -483,7 +389,7 @@ border-radius:10px</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_9">
                <item>
-                <widget class="QPushButton" name="saveVersement">
+                <widget class="QPushButton" name="saveTaux">
                  <property name="font">
                   <font>
                    <family>GeForce</family>
@@ -496,14 +402,14 @@ border-radius:10px</string>
                   <cursorShape>PointingHandCursor</cursorShape>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">#saveVersement{
+                  <string notr="true">#saveTaux{
 	background: rgb(10, 114, 189, 0.7);
 	color: rgb(255, 255, 255);
 	border-radius:4px;
 	padding: 15px
 }
 
-#saveVersement:hover{
+#saveTaux:hover{
 	background: rgb(10, 114, 189, 1);
 	border-radius:4px
 }
@@ -539,11 +445,10 @@ border-radius:10px</string>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>montant</tabstop>
-  <tabstop>saveVersement</tabstop>
-  <tabstop>structure</tabstop>
-  <tabstop>element</tabstop>
-  <tabstop>qtt</tabstop>
+  <tabstop>saveTaux</tabstop>
+  <tabstop>participation</tabstop>
+  <tabstop>casuel</tabstop>
+  <tabstop>valeur</tabstop>
  </tabstops>
  <resources/>
  <connections/>

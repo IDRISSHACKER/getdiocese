@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>438</width>
-    <height>277</height>
+    <width>495</width>
+    <height>649</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -66,30 +66,24 @@
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
                <item>
-                <widget class="QFrame" name="input">
-                 <property name="styleSheet">
-                  <string notr="true">#input{
-	background:white;
-	border-radius:10px;
-	border:2px  solid rgb(10, 114, 189);
-}
-
-#lineEdit{
-	border: none;
-}</string>
+                <widget class="QGroupBox" name="groupBox_3">
+                 <property name="font">
+                  <font>
+                   <family>GeForce</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
                  </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
+                 <property name="title">
+                  <string>Selectionner un compte</string>
                  </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout">
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
                   <property name="spacing">
                    <number>0</number>
                   </property>
                   <property name="leftMargin">
-                   <number>10</number>
+                   <number>0</number>
                   </property>
                   <property name="topMargin">
                    <number>0</number>
@@ -101,71 +95,266 @@
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_2">
-                    <property name="maximumSize">
-                     <size>
-                      <width>30</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="pixmap">
-                     <pixmap>../../static/asset/icons/blue/dollar-sign.svg</pixmap>
-                    </property>
-                    <property name="scaledContents">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLineEdit" name="montant">
-                    <property name="font">
-                     <font>
-                      <family>GeForce</family>
-                      <pointsize>12</pointsize>
-                      <weight>75</weight>
-                      <bold>true</bold>
-                     </font>
-                    </property>
+                   <widget class="QFrame" name="input_6">
                     <property name="styleSheet">
-                     <string notr="true">padding:15px;
+                     <string notr="true">#input_6{
+	background:white;
+	border-radius:10px;
+	border:2px  solid rgb(10, 114, 189);
+}
+
+#nature{
+	border: none;
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>10</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_5">
+                       <property name="maximumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap>../../static/asset/icons/blue/credit-card.svg</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="numeroCompte">
+                       <property name="font">
+                        <font>
+                         <family>GeForce</family>
+                         <pointsize>12</pointsize>
+                         <weight>50</weight>
+                         <bold>false</bold>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">padding:15px;
 border-radius:10px</string>
-                    </property>
-                    <property name="placeholderText">
-                     <string>Montant du versement</string>
-                    </property>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                  </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox_6">
+                 <property name="font">
+                  <font>
+                   <family>GeForce</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Entrez le montant</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_14">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QFrame" name="input_9">
+                    <property name="styleSheet">
+                     <string notr="true">#input_9{
+	background:white;
+	border-radius:10px;
+	border:2px  solid rgb(10, 114, 189);
+}
+
+#nature{
+	border: none;
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>10</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="ico_4">
+                       <property name="maximumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap>../../static/asset/icons/blue/dollar-sign.svg</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="montant">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">padding:15px;
+border-radius:10px</string>
+                       </property>
+                       <property name="maximum">
+                        <number>999999999</number>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="font">
+                  <font>
+                   <family>GeForce</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Selectionner une date de creation</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCalendarWidget" name="calandar">
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="minimumDate">
+                  <date>
+                   <year>2021</year>
+                   <month>2</month>
+                   <day>9</day>
+                  </date>
+                 </property>
+                 <property name="gridVisible">
+                  <bool>true</bool>
+                 </property>
+                 <property name="horizontalHeaderFormat">
+                  <enum>QCalendarWidget::ShortDayNames</enum>
+                 </property>
+                 <property name="verticalHeaderFormat">
+                  <enum>QCalendarWidget::NoVerticalHeader</enum>
+                 </property>
                 </widget>
                </item>
               </layout>
              </widget>
             </item>
             <item>
-             <widget class="QFrame" name="frame_5">
-              <property name="styleSheet">
-               <string notr="true"/>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="font">
+               <font>
+                <family>GeForce</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+              <property name="title">
+               <string>Selectionner un mois</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
-                <widget class="QFrame" name="input_2">
+                <widget class="QFrame" name="input_3">
                  <property name="styleSheet">
-                  <string notr="true">#input_2{
+                  <string notr="true">#input_3{
 	background:white;
 	border-radius:10px;
 	border:2px  solid rgb(10, 114, 189);
 }
 
-#lineEdit_2{
+#ctg_2{
 	border: none;
 }</string>
                  </property>
@@ -175,7 +364,7 @@ border-radius:10px</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
                   <property name="spacing">
                    <number>0</number>
                   </property>
@@ -192,7 +381,7 @@ border-radius:10px</string>
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_5">
+                   <widget class="QLabel" name="label_6">
                     <property name="maximumSize">
                      <size>
                       <width>30</width>
@@ -203,7 +392,7 @@ border-radius:10px</string>
                      <string/>
                     </property>
                     <property name="pixmap">
-                     <pixmap>../../static/asset/icons/blue/credit-card.svg</pixmap>
+                     <pixmap>../../static/asset/icons/blue/calendar.svg</pixmap>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
@@ -211,21 +400,18 @@ border-radius:10px</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="numeroCompte">
+                   <widget class="QComboBox" name="mois">
                     <property name="font">
                      <font>
                       <family>GeForce</family>
                       <pointsize>12</pointsize>
-                      <weight>75</weight>
-                      <bold>true</bold>
+                      <weight>50</weight>
+                      <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">padding:15px;
 border-radius:10px</string>
-                    </property>
-                    <property name="placeholderText">
-                     <string>Numero de compte</string>
                     </property>
                    </widget>
                   </item>

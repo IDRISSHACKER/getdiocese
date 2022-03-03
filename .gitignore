@@ -3,3 +3,4 @@ output
 .vscode
 .git
 env
+__pycache__

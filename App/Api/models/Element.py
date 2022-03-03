@@ -6,19 +6,23 @@ class ElementApi:
     def __init__(self):
         self.db = bdd()
 
-    def setElement(self, id, ctgStructure, ctgElement, intitule, montant):
+    def setElement(self, id, ctgStructure, ctgElement, intitule, montant, ref):
         try:
-            self.db.save("INSERT INTO [GestDiocese].[dbo].[ELEMENTS]([ref_e], [code_cs], [code_ce], [intitule_e], [montant_e]) VALUES(?,?,?,?,?)", [id, ctgStructure, ctgElement, intitule, montant])
+            self.db.save("INSERT INTO [GestDiocese].[dbo].[ELEMENTS]([cpt_el], [code_cs], [code_ce], [intitule_e], [montant_e], [ref_e]) VALUES(?,?,?,?,?,?)", [int(id), str(ctgStructure), str(ctgElement), str(intitule), int(montant), str(ref)])
             return True
         except:
-            print("err insert e")
             return False
 
     def getElements(self):
         try:
-            return self.db.query("SELECT * FROM [GestDiocese].[dbo].[ELEMENTS]")
+            return self.db.query("""SELECT [cpt_el], [intitule_cs], [intitule_ce], [ref_e], [intitule_e], [montant_e] 
+            FROM [GestDiocese].[dbo].[ELEMENTS] 
+            INNER JOIN [GestDiocese].[dbo].[CATEGORIE_STRUCT]
+            ON [GestDiocese].[dbo].[ELEMENTS].[code_cs] = [GestDiocese].[dbo].[CATEGORIE_STRUCT].[code_cs] 
+            INNER JOIN [GestDiocese].[dbo].[CATEGORIE_E] 
+            ON [GestDiocese].[dbo].[ELEMENTS].[code_ce] = [GestDiocese].[dbo].[CATEGORIE_E].[code_ce]""")
         except Exception:
-            print("erreur l'ors de la recuperation des elements")
+            print("erreur l'ors de la recuperation des elements""")
             return []
 
     def getElement(self, title):
@@ -28,8 +32,8 @@ class ElementApi:
             print("erreur l'ors de la recuperation  de l'element")
             return []
 
-    def updateElement(self, key, newTitle, newMontant, newCtg):
-        return self.db.save(f"UPDATE [GestDiocese].[dbo].[ELEMENTS]  SET [intitule_e] = '{newTitle}', [montant_e] = '{newMontant}', [code_ce] = '{newCtg}' WHERE [ref_e] = ?", [key])
+    def updateElement(self, key, ctgStructure, ctgElement, intitule, montant, ref):
+        return self.db.save(f"UPDATE [GestDiocese].[dbo].[ELEMENTS]  SET [code_cs] = ?, [code_ce] = ?, [intitule_e] = ?, [montant_e] = ?, [ref_e] = ? WHERE [cpt_el] = {key}", [str(ctgStructure), str(ctgElement), str(intitule), int(montant), str(ref)])
 
 
     def removeElement(self, title):

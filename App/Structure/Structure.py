@@ -6,19 +6,28 @@ from PyQt5.uic import loadUi
 from App.Api.models.Structure import StructureApi
 from App.Api.models.Zone import ZoneApi
 from App.Api.models.Service import ServiceApi
+from App.Api.models.CategorieStruct import CategorieApi
 from utils.gui.msg import msg
+from utils.gui.dbJson import dbJson
 
 
 class Structure:
     def __init__(self, home):
         super(Structure, self).__init__()
         self.home = home
+        self.dbJson = dbJson("users.json")
         self.addStructure = loadUi("ui/Structure/addStructure.ui")
         self.structureState = 1
         self.key = 0
         self.api = StructureApi()
         self.zoneApi = ZoneApi()
         self.serviceApi = ServiceApi()
+        self.ctgApi = CategorieApi()
+        self.userData = self.dbJson.getJson()
+        self.addStructure.boxCtg.setVisible(False)
+
+        self.initializeTable()
+        self.populateTable()
 
     def settup_connexion(self):
         self.initializeTable()
@@ -42,6 +51,10 @@ class Structure:
         services = self.serviceApi.getServices()
         for row in services:
             self.addStructure.service.addItem(row[1], row[0])
+        
+        ctgStructures = self.ctgApi.getCategories()
+        for row in ctgStructures:
+            self.addStructure.ctgStruct.addItem(row[1], row[0])
 
     def initializeTable(self):
         self.home.structTable.setColumnCount(4)
@@ -103,15 +116,19 @@ class Structure:
         chefStructure = self.addStructure.chef.text()
         zone = self.addStructure.zone.currentData()
         service = self.addStructure.service.currentData()
+        #ctgStructure = self.addStructure.ctgStruct.currentData()
+        ctgStructure = self.dbJson.getJson("users.json").get("ctgStruct")
+        print(f"CtgStruct {ctgStructure}")
+        print(self.userData)
 
         if len(nameStructure) > 0 and len(chefStructure) > 0:
             if self.structureState == 1:
-                self.api.setStructure(secret, 2, zone, service, nameStructure, chefStructure)
+                self.api.setStructure(secret, ctgStructure, zone, service, nameStructure, chefStructure)
 
                 self.addStructure.structure.setText("")
                 self.addStructure.chef.setText("")
             else:
-                self.api.updateStructure(self.key, 2, zone, service, nameStructure, chefStructure)
+                self.api.updateStructure(self.key, ctgStructure, zone, service, nameStructure, chefStructure)
                 self.addStructure.close()
                 self.addStructure.chef.setText("")
                 self.addStructure.structure.setText("")

@@ -3,19 +3,28 @@ from PyQt5 import QtWidgets
 from PyQt5.uic import loadUi
 import time
 from App.Api.models.Element import *
-from App.Api.models.Categorie import *
+from App.Api.models.Categorie import CategorieApi as CategorieElemSApi
+from App.Api.models.CategorieStruct import CategorieApi
 from utils.gui.msg import msg
+from utils.gui.dbJson import dbJson
 
 
 class Element:
     def __init__(self, home):
         super(Element, self).__init__()
         self.home = home
+        self.dbJson = dbJson("users.json")
         self.addElement = loadUi("ui/Element/newElement.ui")
         self.api = ElementApi()
-        self.ctgE = CategorieApi()
+        self.ctgE = CategorieElemSApi()
+        self.ctgS = CategorieApi()
         self.elementState = 1
         self.key = 0
+
+        self.userData = self.dbJson.getJson()
+        self.userCtgStruct = self.userData.get("ctgStruct")
+        self.addElement.boxCtg.setVisible(False)
+
         self.initializeTable()
 
     def settup_connexion(self):
@@ -31,13 +40,10 @@ class Element:
         self.addElement.setWindowTitle("Ajouter un element")
 
     def initializeTable(self):
-        self.home.elementTable.setColumnCount(5)
-        self.home.elementTable.setHorizontalHeaderLabels(("Titre de l'element", "Montant", "Categorie", "Edition", "Supression"))
-        self.home.elementTable.setColumnWidth(0, 200)
-        self.home.elementTable.setColumnWidth(1, 200)
-        self.home.elementTable.setColumnWidth(2, 200)
-        self.home.elementTable.setColumnWidth(4, 200)
-        self.home.elementTable.setColumnWidth(5, 200)
+        self.home.elementTable.setColumnCount(7)
+        self.home.elementTable.setHorizontalHeaderLabels(("Titre de l'element", "Reference" ,"Montant", "Categorie de structure", "Categorie d'element", "Edition", "Supression"))
+        self.home.elementTable.setColumnWidth(0, 100)
+        self.home.elementTable.setColumnWidth(1, 100)
 
     def populateTable(self):
         rows = self.api.getElements()
@@ -78,11 +84,13 @@ class Element:
             editBtn.setIcon(PyQt5.QtGui.QIcon("static/asset/icons/blue/edit.svg"))
             deleteBtn.setIcon(PyQt5.QtGui.QIcon("static/asset/icons/blue/delete.svg"))
 
-            self.home.elementTable.setCellWidget(index, 0, PyQt5.QtWidgets.QLabel(f"{data[3]}"))
-            self.home.elementTable.setCellWidget(index, 1, PyQt5.QtWidgets.QLabel(f"{data[4]}"))
-            self.home.elementTable.setCellWidget(index, 2, PyQt5.QtWidgets.QLabel(f"{data[2]}"))
-            self.home.elementTable.setCellWidget(index, 3, editBtn)
-            self.home.elementTable.setCellWidget(index, 4, deleteBtn)
+            self.home.elementTable.setCellWidget(index, 0, PyQt5.QtWidgets.QLabel(f"{data[4]}"))
+            self.home.elementTable.setCellWidget(index, 1, PyQt5.QtWidgets.QLabel(f"{data[3]}"))
+            self.home.elementTable.setCellWidget(index, 2, PyQt5.QtWidgets.QLabel(f"{data[5]}"))
+            self.home.elementTable.setCellWidget(index, 3, PyQt5.QtWidgets.QLabel(f"{data[2]}"))
+            self.home.elementTable.setCellWidget(index, 4, PyQt5.QtWidgets.QLabel(f"{data[1]}"))
+            self.home.elementTable.setCellWidget(index, 5, editBtn)
+            self.home.elementTable.setCellWidget(index, 6, deleteBtn)
             index += 1
 
     def edit(self, value):
@@ -90,10 +98,11 @@ class Element:
         datas = self.api.getElement(value)
         for row in datas:
             self.addElement.setModal(True)
-            self.addElement.setWindowTitle(f"edition de {row[3]}")
+            self.addElement.setWindowTitle(f"edition de {row[4]}")
             self.key = row[0]
-            self.addElement.titre.setText(f"{row[3]}")
-            self.addElement.montant.setText(f"{row[4]}")
+            self.addElement.titre.setText(f"{row[4]}")
+            self.addElement.refElem.setText(f"{row[3]}")
+            self.addElement.montant.setValue(int({row[5]}))
             self.addElement.show()
 
     def onSelectedChanged(self, selected, deselected):
@@ -103,10 +112,10 @@ class Element:
             index = ix.column()
             value = table.cellWidget(row, 0).text()
 
-            if index == 3:
+            if index == 5:
                 self.edit(value)
 
-            elif index == 4:
+            elif index == 6:
                 self.api.removeElement(value)
                 self.populateTable()
                 msg.show(f"Supression de {value} resuis ")
@@ -116,28 +125,35 @@ class Element:
         for row in ctgs:
             self.addElement.ctg.addItem(row[1], row[0])
 
+        ctgss = self.ctgS.getCategories()
+        for row in ctgss:
+            self.addElement.ctgS.addItem(row[1], row[0])
+
 
 
     def saveElement(self):
         title = self.addElement.titre.text()
-        montant = self.addElement.montant.text()
-        ctg = self.addElement.ctg.currentData()
-        secret = f"{time.time_ns()}"
+        ref = self.addElement.refElem.text()
+        ctgE = self.addElement.ctg.currentData()
+        ctgS = self.userCtgStruct
+        montant = str(self.addElement.montant.value())
+        secret = time.time_ns()
 
-        if len(title) > 0 and len(montant) > 0 and len(ctg):
+        if len(title) > 0 and len(montant) > 0 and len(ref) > 0:
             if self.elementState == 1:
-                if self.api.setElement(secret, 2, ctg, title, montant):
+                if self.api.setElement(secret, ctgS, ctgE, title, montant, ref):
                     self.addElement.close()
                     self.addElement.titre.setText("")
-                    self.addElement.montant.setText("")
+                    self.addElement.montant.setValue(0)
                 else:
                     print("Can't save the Element")
             else:
-                self.api.updateElement(self.key, title, montant, ctg)
+                self.api.updateElement(self.key, ctgS, ctgE, title, montant, ref)
                 self.addElement.close()
                 self.addElement.titre.setText("")
-                self.addElement.montant.setText("")
+                self.addElement.montant.setValue(0)
                 msg.show(f"Modification prise en compte ! ")
+                self.elementState = 1
         else:
             print("Vous devez entrer un intitulé")
 

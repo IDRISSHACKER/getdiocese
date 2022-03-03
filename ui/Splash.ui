@@ -67,9 +67,9 @@
          <widget class="QLabel" name="logo">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>100</x>
             <y>30</y>
-            <width>261</width>
+            <width>401</width>
             <height>41</height>
            </rect>
           </property>
@@ -82,7 +82,7 @@
            </font>
           </property>
           <property name="text">
-           <string>EGLISEAPP</string>
+           <string>GESTDIOCESE</string>
           </property>
          </widget>
          <widget class="QWidget" name="widget_4" native="true">

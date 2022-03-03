@@ -4,16 +4,27 @@ from time import sleep
 import pypyodbc as pyodbc
 from PyQt5.QtCore import QObject, QThread, pyqtSignal
 
+from utils.gui.dbJson import dbJson
+
 
 class Worker(QObject):
     finished = pyqtSignal()
 
     def __init__(self, server="IDRISS-HACKER", database="GestDiocese"):
         super(Worker, self).__init__()
-        self.server = server
-        self.database = database
         self.conn = ""
         self.status = 0
+        self.json = dbJson("database.json")
+        if not self.json.verifyJson():
+            self.json.createJson({
+                "server": "IDRISS-HACKER",
+                "database": "GestDiocese",
+                "warning": "!!!!!! Do not modify database name default {GestDiocese}"
+            })
+
+        infos = self.json.getJson()
+        self.server = infos.get("server")
+        self.database = infos.get("database")
 
     def run(self):
         self.log()

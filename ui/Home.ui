@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>818</width>
-    <height>559</height>
+    <width>1292</width>
+    <height>709</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -326,42 +326,55 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btnUser">
+              <widget class="QPushButton" name="deconnect">
                <property name="maximumSize">
                 <size>
-                 <width>40</width>
-                 <height>40</height>
+                 <width>200</width>
+                 <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>GeForce</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">#btnCog, #btnEtat, #btnUser, #btnVersement{
-	background: rgba(10, 114, 189, 0.1);
-	color: rgb(10, 114, 189);
-	border-radius:4px;
-	padding: 5px
+                <string notr="true">QPushButton#deconnect{
+	background: #e74c3c
+;
+	color: white;
+	padding: 15px;
+	border-radius: 4px;
 }
 
-#btnCog:hover, #btnEtat:hover, #btnUser:hover, #btnVersement:hover{
-	background: rgb(10, 114, 189, 0.3);
-	color: rgb(10, 114, 189);
-	border-radius:4px
-}</string>
+QPushButton#deconnect:hover{
+	background: #c0392b;
+	transform: translateY(2px);
+	transition: all linear 0.3s
+}
+
+QPushButton#deconnect:pressed{
+	background: #c0392b;
+	transform: translateY(4px);
+	padding-top:10px;
+	padding-left:10px;
+	transition: all linear 0.3s
+}
+
+</string>
                </property>
                <property name="text">
-                <string/>
+                <string>Deconnexion</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../static/asset/icons/blue/user.svg</normaloff>../static/asset/icons/blue/user.svg</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>34</width>
-                 <height>34</height>
-                </size>
+                 <normaloff>../static/asset/icons/white/log-out.svg</normaloff>../static/asset/icons/white/log-out.svg</iconset>
                </property>
               </widget>
              </item>
@@ -457,8 +470,14 @@
                          </property>
                         </widget>
                        </item>
-                       <item alignment="Qt::AlignRight">
+                       <item>
                         <widget class="QPushButton" name="btnAdd">
+                         <property name="maximumSize">
+                          <size>
+                           <width>200</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
                          <property name="font">
                           <font>
                            <pointsize>10</pointsize>
@@ -483,7 +502,7 @@
 </string>
                          </property>
                          <property name="text">
-                          <string>Nouveau</string>
+                          <string>Versements</string>
                          </property>
                          <property name="icon">
                           <iconset>
@@ -546,7 +565,7 @@
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_22">
                                    <item>
-                                    <widget class="QLabel" name="label_8">
+                                    <widget class="QLabel" name="structure">
                                      <property name="font">
                                       <font>
                                        <pointsize>14</pointsize>
@@ -621,7 +640,7 @@
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_23">
                                    <item>
-                                    <widget class="QLabel" name="label_33">
+                                    <widget class="QLabel" name="compte">
                                      <property name="font">
                                       <font>
                                        <pointsize>14</pointsize>
@@ -690,7 +709,7 @@
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_24">
                                    <item>
-                                    <widget class="QLabel" name="label_36">
+                                    <widget class="QLabel" name="service">
                                      <property name="font">
                                       <font>
                                        <pointsize>14</pointsize>
@@ -759,7 +778,7 @@
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_25">
                                    <item>
-                                    <widget class="QLabel" name="label_39">
+                                    <widget class="QLabel" name="users">
                                      <property name="font">
                                       <font>
                                        <pointsize>14</pointsize>
@@ -768,7 +787,7 @@
                                       </font>
                                      </property>
                                      <property name="text">
-                                      <string>89</string>
+                                      <string>1</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -820,6 +839,9 @@
                               <verstretch>0</verstretch>
                              </sizepolicy>
                             </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
                             <layout class="QHBoxLayout" name="horizontalLayout_21">
                              <item>
                               <widget class="QWidget" name="widget_6" native="true"/>
@@ -832,6 +854,258 @@
                                  <verstretch>0</verstretch>
                                 </sizepolicy>
                                </property>
+                               <widget class="QWidget" name="widget_2" native="true">
+                                <property name="geometry">
+                                 <rect>
+                                  <x>-20</x>
+                                  <y>60</y>
+                                  <width>641</width>
+                                  <height>211</height>
+                                 </rect>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background:white;
+border-radius: 10px;</string>
+                                </property>
+                                <widget class="QWidget" name="widget_11" native="true">
+                                 <property name="geometry">
+                                  <rect>
+                                   <x>70</x>
+                                   <y>30</y>
+                                   <width>111</width>
+                                   <height>111</height>
+                                  </rect>
+                                 </property>
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>60</width>
+                                   <height>60</height>
+                                  </size>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(12, 56, 107);
+border-radius: 40px;
+border: 5px solid #bbb;
+width:50px;
+heeght:50px;</string>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_10">
+                                  <item>
+                                   <widget class="QLabel" name="label_6">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>60</width>
+                                      <height>60</height>
+                                     </size>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true">border: none;
+width:50px;
+heeght:50px;</string>
+                                    </property>
+                                    <property name="text">
+                                     <string/>
+                                    </property>
+                                    <property name="pixmap">
+                                     <pixmap>../static/asset/avatar/default.svg</pixmap>
+                                    </property>
+                                    <property name="scaledContents">
+                                     <bool>true</bool>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </widget>
+                                <widget class="QWidget" name="widget_12" native="true">
+                                 <property name="geometry">
+                                  <rect>
+                                   <x>220</x>
+                                   <y>20</y>
+                                   <width>371</width>
+                                   <height>161</height>
+                                  </rect>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                                  <item>
+                                   <widget class="QLabel" name="userName">
+                                    <property name="font">
+                                     <font>
+                                      <family>GeForce</family>
+                                      <pointsize>19</pointsize>
+                                      <weight>75</weight>
+                                      <bold>true</bold>
+                                     </font>
+                                    </property>
+                                    <property name="text">
+                                     <string>IDRISS-HACKER</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QWidget" name="widget_14" native="true">
+                                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                                     <item>
+                                      <widget class="QLabel" name="label_4">
+                                       <property name="font">
+                                        <font>
+                                         <family>GeForce</family>
+                                         <pointsize>12</pointsize>
+                                         <weight>75</weight>
+                                         <bold>true</bold>
+                                        </font>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true">color: rgba(0, 0, 0 /45%);
+</string>
+                                       </property>
+                                       <property name="text">
+                                        <string>Type de Structure</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item>
+                                      <widget class="QLabel" name="structType">
+                                       <property name="font">
+                                        <font>
+                                         <family>GeForce</family>
+                                         <pointsize>10</pointsize>
+                                         <weight>75</weight>
+                                         <bold>true</bold>
+                                        </font>
+                                       </property>
+                                       <property name="text">
+                                        <string>type</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QWidget" name="widget_13" native="true">
+                                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                                     <item>
+                                      <widget class="QLabel" name="label_2">
+                                       <property name="font">
+                                        <font>
+                                         <family>GeForce</family>
+                                         <pointsize>12</pointsize>
+                                         <weight>75</weight>
+                                         <bold>true</bold>
+                                        </font>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true">color: rgba(0, 0, 0 /45%);
+</string>
+                                       </property>
+                                       <property name="text">
+                                        <string>Derniere connexion:</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item>
+                                      <widget class="QLabel" name="lastLogin">
+                                       <property name="font">
+                                        <font>
+                                         <family>GeForce</family>
+                                         <pointsize>10</pointsize>
+                                         <weight>75</weight>
+                                         <bold>true</bold>
+                                        </font>
+                                       </property>
+                                       <property name="text">
+                                        <string>15/02/2022</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QWidget" name="widget_16" native="true">
+                                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                                     <item>
+                                      <widget class="QLabel" name="label_7">
+                                       <property name="font">
+                                        <font>
+                                         <family>GeForce</family>
+                                         <pointsize>12</pointsize>
+                                         <weight>75</weight>
+                                         <bold>true</bold>
+                                        </font>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true">color: rgba(0, 0, 0 /45%);
+</string>
+                                       </property>
+                                       <property name="text">
+                                        <string>Privilège:</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item>
+                                      <widget class="QLabel" name="privilege_3">
+                                       <property name="font">
+                                        <font>
+                                         <family>GeForce</family>
+                                         <pointsize>10</pointsize>
+                                         <weight>75</weight>
+                                         <bold>true</bold>
+                                        </font>
+                                       </property>
+                                       <property name="text">
+                                        <string>ADMIN</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </widget>
+                               <widget class="QLabel" name="label">
+                                <property name="geometry">
+                                 <rect>
+                                  <x>700</x>
+                                  <y>270</y>
+                                  <width>47</width>
+                                  <height>13</height>
+                                 </rect>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                               <widget class="QWidget" name="widget_15" native="true">
+                                <property name="geometry">
+                                 <rect>
+                                  <x>640</x>
+                                  <y>40</y>
+                                  <width>441</width>
+                                  <height>201</height>
+                                 </rect>
+                                </property>
+                                <widget class="QLabel" name="label_3">
+                                 <property name="geometry">
+                                  <rect>
+                                   <x>-10</x>
+                                   <y>-20</y>
+                                   <width>391</width>
+                                   <height>241</height>
+                                  </rect>
+                                 </property>
+                                 <property name="text">
+                                  <string/>
+                                 </property>
+                                 <property name="pixmap">
+                                  <pixmap>../static/asset/other/bg.png</pixmap>
+                                 </property>
+                                 <property name="scaledContents">
+                                  <bool>true</bool>
+                                 </property>
+                                </widget>
+                               </widget>
                               </widget>
                              </item>
                             </layout>

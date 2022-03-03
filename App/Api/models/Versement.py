@@ -6,39 +6,38 @@ class VersementApi:
     def __init__(self):
         self.db = bdd()
 
-    def setVersement(self, id, intitule):
+    def setVersement(self, id, compte, montant, date, mois):
         try:
-            self.db.save("INSERT INTO [GestDiocese].[dbo].[ZONE](code_z, intitule_z) VALUES(?,?)", [id, intitule])
+            self.db.save("INSERT INTO [GestDiocese].[dbo].[VERSEMENTS](id_v, num_cpt, montant_v, date_v, mois_v) VALUES(?,?,?,?,?)", [int(id), int(compte), int(montant), str(date), str(mois)])
             return True
-        except Exception:
-            print(f"erreur lors de l'ajout {Exception}")
+        except:
             return False
 
     def getVersements(self):
         try:
-            return self.db.query("SELECT * FROM [GestDiocese].[dbo].[ZONE]")
+            return self.db.query("SELECT * FROM [GestDiocese].[dbo].[VERSEMENTS]")
         except Exception:
-            print("erreur l'ors de la recuperation des zones")
+            print("erreur l'ors de la recuperation des versements")
             return []
 
     def getVersement(self, title):
         try:
-            return self.db.query("SELECT * FROM [GestDiocese].[dbo].[ZONE] WHERE [GestDiocese].[dbo].[ZONE].[intitule_z] = ?", [title])
+            return self.db.query("SELECT * FROM [GestDiocese].[dbo].[VERSEMENTS] WHERE [GestDiocese].[dbo].[VERSEMENTS].[id_v] = ?", [int(title)])
         except Exception:
-            print("erreur l'ors de la recuperation  de la zone")
+            print("erreur l'ors de la recuperation  du versement")
             return []
 
-    def updateVersement(self, key, newTitle):
+    def updateVersement(self, key, compte, montant, date, mois):
         try:
-            return self.db.save(f"UPDATE [GestDiocese].[dbo].[ZONE]  SET [intitule_z] = '{newTitle}' WHERE [code_z] = ?", [key])
+            return self.db.save(f"UPDATE [GestDiocese].[dbo].[VERSEMENTS]  SET [num_cpt] = ?, [montant_v] = ?, [date_v] = ?, [mois_v] = ? WHERE [id_v] = {key}", [int(compte), int(montant), str(date), str(mois)])
         except Exception:
-            print("erreur l'ors de la mise à jours  de la zone")
+            print("erreur l'ors de la mise à jours  du versement")
             return []
 
     def removeVersement(self, title):
         try:
-            self.db.save("DELETE FROM [GestDiocese].[dbo].[ZONE] WHERE [GestDiocese].[dbo].[ZONE].[intitule_z] = ?",
-                         [title])
+            self.db.save("DELETE FROM [GestDiocese].[dbo].[VERSEMENTS] WHERE [GestDiocese].[dbo].[VERSEMENTS].[id_v] = ?",
+                         [int(title)])
         except:
             print("Erreur lors de la supression !")
 

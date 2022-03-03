@@ -405,7 +405,7 @@ margin: 2px</string>
                 <number>13</number>
                </property>
                <item>
-                <widget class="QComboBox" name="comboBox">
+                <widget class="QComboBox" name="ctgStruct">
                  <property name="font">
                   <font>
                    <family>GeForce</family>
@@ -417,21 +417,6 @@ margin: 2px</string>
                  <property name="styleSheet">
                   <string notr="true">padding: 15px;</string>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>item1</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>item 2</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>item 3</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
               </layout>
